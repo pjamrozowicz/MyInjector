@@ -1,0 +1,2 @@
+# MyInjector
+Simple IoC container
