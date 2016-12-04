@@ -1,8 +1,7 @@
 package SimpleBindingTest;
 
-import Examples.SimpleBinding.SimpleBinding;
-
-import Examples.Sword;
+import Common.Sword;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertThat;

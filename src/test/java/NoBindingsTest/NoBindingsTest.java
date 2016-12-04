@@ -1,8 +1,7 @@
 package NoBindingsTest;
 
 
-import Examples.NoBindings.NoBindings;
-import Examples.Sword;
+import Common.Sword;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.instanceOf;

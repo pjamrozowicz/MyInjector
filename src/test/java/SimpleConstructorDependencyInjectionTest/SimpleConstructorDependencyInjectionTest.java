@@ -1,7 +1,8 @@
 package SimpleConstructorDependencyInjectionTest;
 
-import Examples.SimpleConstructorDependencyInjection.SimpleConstructorDependencyInjection;
-import Examples.Warrior;
+import Common.Sword;
+import Common.Warrior;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertThat;
@@ -11,6 +12,6 @@ public class SimpleConstructorDependencyInjectionTest {
     @Test
     public void testConstructorDependencyInjection(){
         Warrior warrior = SimpleConstructorDependencyInjection.constructorDependencyInjection();
-        assertThat(warrior, instanceOf(Warrior.class));
+        assertThat(warrior.getWeapon(), instanceOf(Sword.class));
     }
 }
