@@ -10,7 +10,7 @@ public class BindingInfo {
         this.clazz = clazz;
     }
 
-    public BindingInfo setSingletion(){
+    public BindingInfo setSingleton(){
         this.isSingleton = true;
         return this;
     }
