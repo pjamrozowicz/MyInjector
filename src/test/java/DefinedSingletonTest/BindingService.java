@@ -1,12 +1,12 @@
-package SimpleBindingTest;
+package DefinedSingletonTest;
+
 
 import Common.IWeapon;
 import myinjector.AbstractSettings;
 
-
 public class BindingService extends AbstractSettings {
 
     public void load() {
-        addBinding(IWeapon.class, Sword.class);
+        addBinding(IWeapon.class, Sword.class).setSingleton();
     }
 }

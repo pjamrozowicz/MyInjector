@@ -2,8 +2,6 @@ package Common;
 
 
 import myinjector.Annotations.Inject;
-import myinjector.Annotations.Singleton;
-import myinjector.Scopes.ScopeEnum;
 
 public class WarriorHouse {
     private Warrior warrior;

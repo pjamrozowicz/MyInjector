@@ -1,7 +1,6 @@
 package TwoLevelDependencyInjectionTest;
 
 import Common.IWeapon;
-import Common.Sword;
 import myinjector.AbstractSettings;
 
 

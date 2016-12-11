@@ -39,16 +39,23 @@ public abstract class AbstractSettings {
     }
 
     public BindingInfo getNamedBindingInfo(Class sourceClass, String name){
+        System.out.println("Getting named binding info for class " + sourceClass.getName() + " and string " + name);
         List<BindingInfo> bindingInfoList = getAllBindingInfos(sourceClass);
         for (BindingInfo bindingInfo:bindingInfoList) {
-            if(bindingInfo.getName().equals(name)){
-                return bindingInfo;
+            System.out.println("Checking binding info: " + bindingInfo.getName());
+            if(bindingInfo.getName() != null){
+                if(bindingInfo.getName().equals(name)){
+                    System.out.println("I found binding!");
+                    return bindingInfo;
+                }
             }
         }
+        System.out.println("Returning null");
         return null; //@TODO replace with: display warning there is no such binding
     }
 
-    public List<BindingInfo> getAllBindingInfos(Class sourceClass){
+    private List<BindingInfo> getAllBindingInfos(Class sourceClass){
        return bindings.get(sourceClass);
     }
+
 }

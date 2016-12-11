@@ -1,11 +1,9 @@
-package Common;
+package NoBindingsTest;
 
-
-import myinjector.Annotations.Inject;
+import Common.IWeapon;
 
 public class Sword implements IWeapon {
 
-    @Inject
     public Sword(){
 
     }

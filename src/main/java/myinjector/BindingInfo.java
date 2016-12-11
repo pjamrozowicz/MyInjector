@@ -1,17 +1,22 @@
 package myinjector;
 
+import myinjector.Scopes.IScope;
+import myinjector.Scopes.Prototype;
+import myinjector.Scopes.Singleton;
+
 public class BindingInfo {
     private Class clazz;
     private String name;
-    private boolean isSingleton = false;
+    private IScope scope;
 
 
     public BindingInfo(Class clazz){
         this.clazz = clazz;
+        this.scope = new Prototype();
     }
 
     public BindingInfo setSingleton(){
-        this.isSingleton = true;
+        this.scope = new Singleton();
         return this;
     }
 
@@ -28,7 +33,7 @@ public class BindingInfo {
         return name;
     }
 
-    public boolean isSingleton(){
-        return this.isSingleton;
+    public IScope getScope() {
+        return scope;
     }
 }
