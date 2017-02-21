@@ -1,6 +1,18 @@
 # MyInjector
-Simple IoC container
+## Implementation of IoC container in Java.
 
-Current class diagram
+### It supports:
+* Dependency injection
+    * using constructor
+    * using methods
+    * using fields
+* Named bindings
+* Defining object scope
+    * Prototype
+    * Singleton
+* Creating collections 
+* Injecting primitive data types
+* Optional bindings
+* Detecting cycle dependencies in constructor
 
-![alt tag](https://raw.githubusercontent.com/bumbur/MyInjector/master/diagram-klas-draw.io.png)
+***
