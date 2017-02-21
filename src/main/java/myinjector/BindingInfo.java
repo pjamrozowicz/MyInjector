@@ -1,27 +1,43 @@
 package myinjector;
 
+import myinjector.Dependencies.ClassDependencies;
 import myinjector.Scopes.IScope;
 import myinjector.Scopes.Prototype;
 import myinjector.Scopes.Singleton;
 
+
 public class BindingInfo {
     private Class clazz;
-    private String name;
+    private ClassDependencies classDependencies;
+    private String bindingName;
     private IScope scope;
+    private Object instance;
+    private int number = 1;
+    private BindingInfo multipleBindingInfo;
 
 
     public BindingInfo(Class clazz){
         this.clazz = clazz;
-        this.scope = new Prototype();
+        this.scope = new Prototype(this);
     }
 
     public BindingInfo setSingleton(){
-        this.scope = new Singleton();
+        this.scope = new Singleton(this);
         return this;
     }
 
-    public BindingInfo setName(String name){
-        this.name = name;
+    public BindingInfo setBindingName(String bindingName){
+        this.bindingName = bindingName;
+        return this;
+    }
+
+    public BindingInfo toInstance(Object instance){
+        this.instance = instance;
+        return this;
+    }
+
+    public BindingInfo setMultiple(int number){
+        this.number = number;
         return this;
     }
 
@@ -29,11 +45,35 @@ public class BindingInfo {
         return clazz;
     }
 
-    public String getName() {
-        return name;
+    public String getBindingName() {
+        return bindingName;
     }
 
     public IScope getScope() {
         return scope;
+    }
+
+    public void setClassDependencies(ClassDependencies classDependencies) {
+        this.classDependencies = classDependencies;
+    }
+
+    public ClassDependencies getClassDependencies(){
+        return classDependencies;
+    }
+
+    public Object getInstance() {
+        return instance;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public BindingInfo getMultipleBindingInfo() {
+        return multipleBindingInfo;
+    }
+
+    public void setMultipleBindingInfo(BindingInfo multipleBindingInfo) {
+        this.multipleBindingInfo = multipleBindingInfo;
     }
 }

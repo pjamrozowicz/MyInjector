@@ -7,7 +7,6 @@ public class Gun implements IWeapon {
 
     private GunSilencer gunSilencer;
 
-    @Inject
     public Gun(){
 
     }

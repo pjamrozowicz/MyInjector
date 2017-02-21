@@ -1,6 +1,7 @@
 package NoBindingsTest;
 
-import myinjector.MyInjector;
+import myinjector.IMyInjector;
+import myinjector.InjectorFactory;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
@@ -10,7 +11,7 @@ public class NoBindings {
 
     @Test
     public void testGetSword(){
-        MyInjector myInjector = new MyInjector(new BindingService());
+        IMyInjector myInjector = InjectorFactory.getInjector("DefaultInjector", new BindingService());
         Sword sword = myInjector.get(Sword.class);
         assertThat(sword, instanceOf(Sword.class));
     }

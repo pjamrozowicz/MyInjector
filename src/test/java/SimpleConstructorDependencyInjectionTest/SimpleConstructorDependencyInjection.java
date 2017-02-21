@@ -1,7 +1,8 @@
 package SimpleConstructorDependencyInjectionTest;
 
 import Common.Warrior;
-import myinjector.MyInjector;
+import myinjector.IMyInjector;
+import myinjector.InjectorFactory;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
@@ -11,7 +12,7 @@ public class SimpleConstructorDependencyInjection {
 
     @Test
     public void constructorDependencyInjection(){
-        MyInjector myInjector = new MyInjector(new BindingService());
+        IMyInjector myInjector = InjectorFactory.getInjector("DefaultInjector", new BindingService());
         Warrior warrior = myInjector.get(Warrior.class);
         assertThat(warrior.getWeapon(), instanceOf(Sword.class));
     }

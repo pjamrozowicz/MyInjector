@@ -1,8 +1,7 @@
 package myinjector.Scopes;
 
-
-import myinjector.AbstractSettings;
+import myinjector.ComponentBuilder;
 
 public interface IScope {
-    public <T> T getInstance(Class clazz, AbstractSettings settings);
+    <T> T getInstance(ComponentBuilder componentBuilder);
 }
