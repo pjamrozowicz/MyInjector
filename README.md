@@ -10,8 +10,9 @@
 * Defining object scope
     * Prototype
     * Singleton
-* Creating collections 
+* Injecting collections 
 * Injecting primitive data types
+* Using both annotations and bindings collection to add bindings, define scope and other details.
 * Optional bindings
 * Detecting cycle dependencies in constructor
 
